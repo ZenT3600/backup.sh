@@ -32,7 +32,7 @@ encrypt() {
 
 chunk() {
 	gum spin --spinner dot --title "Copying $1 -> ${TEMPFOLDER}$1" -- cp -r $1 ${TEMPFOLDER}$1
-	gum spin --spinner dot --title "Splitting ${TEMPFOLDER}$1 into $CHUNKSIZE chunks" -- perl F:\\dirsplit\\dirsplit -m -s $CHUNKSIZE -p ${TEMPFOLDER}$1_ ${TEMPFOLDER}$1
+	gum spin --spinner dot --title "Splitting ${TEMPFOLDER}$1 into $CHUNKSIZE chunks" -- perl $DIRSPLIT -m -s $CHUNKSIZE -p ${TEMPFOLDER}$1_ ${TEMPFOLDER}$1
 	gum spin --spinner dot --title "Removing ${TEMPFOLDER}$1" -- rm -rf ${TEMPFOLDER}$1
 	_info "Finished Splitting $1 into $CHUNKSIZE chunks"
 }
